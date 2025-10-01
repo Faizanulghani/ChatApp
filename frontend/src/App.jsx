@@ -4,11 +4,11 @@ import SignUpPage from "./pages/SignUpPage";
 import LoginPage from "./pages/LoginPage";
 import SettingPage from "./pages/SettingPage";
 import ProfilePage from "./pages/ProfilePage";
-import Navbar from "./pages/Navbar";
 import { Loader } from "lucide-react";
 import { useAuthStore } from "./store/useAuthStore";
 import { useEffect } from "react";
 import { Toaster } from "react-hot-toast";
+import Navbar from "./components/Navbar";
 
 const App = () => {
   const { authUser, checkAuth, isCheckingAuth } = useAuthStore();
