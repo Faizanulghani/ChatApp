@@ -35,5 +35,19 @@ export const useChatStore = create((set) => ({
     }
   },
 
+  sendMessage: async (messageData) => {
+    const { selectedUser, messages } = useChatStore.getState();
+    try {
+      const res = await api.post(
+        `/message/send/${selectedUser._id}`,
+        messageData
+      );
+      set({ messages: [...messages, res.data] });
+    } catch (error) {
+      console.log("Error in sendMessage", error);
+      toast.error(error.response.data.message);
+    }
+  },
+
   setSelectedUser: (selectedUser) => set({ selectedUser }),
 }));
