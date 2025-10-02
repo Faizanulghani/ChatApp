@@ -7,16 +7,15 @@ import cors from "cors";
 
 import { connectDB } from "./lib/db.js";
 
-dotenv.config();
+import { io, app, server } from "./lib/socket/socket.js";
 
-const app = express();
+dotenv.config();
 
 const PORT = process.env.PORT;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-
 
 app.use(
   cors({
@@ -28,7 +27,7 @@ app.use(
 app.use("/api/auth", authRoutes);
 app.use("/api/message", messageRoutes);
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
   connectDB();
 });
