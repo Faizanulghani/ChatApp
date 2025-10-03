@@ -22,7 +22,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: "*",
+    origin: "https://my-chat-iosfn4gjp-faizan-ul-ghanis-projects.vercel.app/",
     credentials: true,
   })
 );
