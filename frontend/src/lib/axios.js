@@ -3,7 +3,7 @@ import axios from "axios";
 export const api = axios.create({
   baseURL:
     import.meta.env.MODE === "development"
-      ? "http://localhost:5001/api"
+      ? "https://chatapp-9ourksjb1-faizan-ul-ghanis-projects.vercel.app/"
       : "/api",
   withCredentials: true,
 });
