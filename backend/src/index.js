@@ -13,7 +13,7 @@ import { io, app, server } from "./lib/socket/socket.js";
 
 dotenv.config();
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 4000;
 const __dirname = path.resolve();
 
 app.use(express.json({ limit: "50mb" }));
@@ -22,7 +22,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: "https://my-chat-iosfn4gjp-faizan-ul-ghanis-projects.vercel.app/",
+    origin: "http://localhost:5173",
     credentials: true,
   })
 );
